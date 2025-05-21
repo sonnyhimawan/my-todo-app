@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Todo App</title>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body class="bg-gray-100 flex justify-center">
+
+        <!-- App Container -->
+        <div class="w-4/12 px-4/8 flex flex-col gap-8 p-5">
+
+            <!-- Profile -->
+
+            <div class="flex flex-1 items-center">
+                <div>
+                    <img
+                        src="https://api.dicebear.com/9.x/lorelei/svg?seed=Andrea"
+                        alt="avatar"
+                        class="w-14 bg-white rounded-full" />
+                </div>
+                <div class="flex flex-col flex-1 gap-1 mx-4">
+                    <span class="font-medium text-black text-xl">Maman Obay
+                        Nielson</span>
+                    <span class="font-reguler text-gray-600 text-base">Fullstack
+                        Designer</span>
+                </div>
+
+                <!-- Time -->
+
+                <div class="flex flex-col text-right">
+                    <div id="date" class="text-base font-normal text-gray-400">01 Feb
+                        2025</div>
+                    <div id="time"
+                        class="text-base font-normal text-gray-400">00:00:00</div>
+                </div>
+
+            </div>
+
+            <!-- Form -->
+
+            <div class="flex">
+
+                <form id="todo-form" class="w-full">
+                    <div id="priority-container" class="flex flex-row gap-4">
+                        <select id="input-priority"
+                            class="w-1/2 py-2 px-3 text-gray-400 bg-white rounded text-base">
+                            <option disabled selected value="">Select Priority</option>
+                            <option>Low Priority</option>
+                            <option>Medium Priority</option>
+                            <option>High Priority</option>
+                        </select>
+                        <input type="date" id="input-date"
+                            class="w-1/2 py-2 px-3 text-gray-400 bg-white rounded text-base" />
+                    </div>
+                    <div class="mt-4">
+                        <textarea id="input-todo"
+                            placeholder="Apa yang akan dikerjakan hari ini?"
+                            class="w-full h-40 py-2 px-3 text-gray-400 bg-white rounded text-base"></textarea>
+                    </div>
+                    <div class="flex gap-x-3 mt-4">
+                        <button type="reset"
+                            class="px-6 py-2 rounded bg-blue-100 text-blue-700 hover:bg-blue-200">Reset</button>
+                        <button type="submit"
+                            class="px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- My Todo -->
+
+            <div id="tab-todo">
+                <div class="relative flex justify-between items-center border-b border-gray-300 w-full">
+                    <div id="tab" class="text-gray-400">
+                        <span class="text-lg px-5 cursor-pointer border-b-2 font-medium py-2 text-blue-600" data-tab="todo">Todo</span>
+                         <span class="text-base px-5 cursor-pointer py-2 inline-block" data-tabid="done">Done</span> 
+                        <span class="text-base px-5 cursor-pointer py-2 inline-block" data-tabid="overdue">Overdue</span> 
+                       
+                    </div>
+                    <button id="clear" class="text-sm rounded-md inline-block cursor-pointer duration-200 text-blue-600 font-medium">Clear All</button>
+                </div>
+            </div>
+
+            <!-- My Todo List -->
+
+           <div id="todo-list" class=""></div> 
+            <div id="todo" class=""></div>
+            <div id="todo-done" class="hidden"></div>
+            <div id="todo-overdue" class="hidden"></div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+
+</html>
